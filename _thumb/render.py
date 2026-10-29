@@ -26,7 +26,10 @@ with sync_playwright() as p:
         if not d['style']:
             d['style'] = 's6' if 'partner' in slug else 's%d' % (h % 5 + 1)
         rnd = random.Random(h)
-        d['qr'] = ''.join('<i></i>' if rnd.random() < .55 or (i // 9 in (0, 8) or i % 9 in (0, 8)) else '<i class="o"></i>' for i in range(81))
+        import qrcode
+        q = qrcode.QRCode(border=0, error_correction=qrcode.constants.ERROR_CORRECT_M); q.add_data('https://tycoonkr.com'); q.make()
+        mx = q.get_matrix(); n = len(mx)
+        d['qr'] = '<svg viewBox="0 0 %d %d" width="320" height="320" shape-rendering="crispEdges">' % (n, n) + ''.join('<rect x="%d" y="%d" width="1" height="1"/>' % (x, y) for y in range(n) for x in range(n) if mx[y][x]) + '</svg>'
         html = TPL
         for k, v in d.items(): html = html.replace('{{%s}}' % k, v)
         tmp = os.path.join(ROOT, '_thumb', '_tmp.html')
