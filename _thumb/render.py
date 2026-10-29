@@ -1,9 +1,9 @@
-import glob, os, re, sys
+import glob, os, re, sys, hashlib, random
 from playwright.sync_api import sync_playwright
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, '_thumb', 'template.html'), encoding='utf-8').read()
-DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '오늘 정산 예정'}
+DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '오늘 정산 예정', 'style': ''}
 
 def meta(path):
     t = open(path, encoding='utf-8').read().split('---')[1]
@@ -22,6 +22,11 @@ with sync_playwright() as p:
         out = os.path.join(ROOT, 'img', slug + '.png')
         d = meta(f)
         if not d or (os.path.exists(out) and '--force' not in sys.argv): continue
+        h = int(hashlib.md5(slug.encode()).hexdigest(), 16)
+        if not d['style']:
+            d['style'] = 's6' if 'partner' in slug else 's%d' % (h % 5 + 1)
+        rnd = random.Random(h)
+        d['qr'] = ''.join('<i></i>' if rnd.random() < .55 or (i // 9 in (0, 8) or i % 9 in (0, 8)) else '<i class="o"></i>' for i in range(81))
         html = TPL
         for k, v in d.items(): html = html.replace('{{%s}}' % k, v)
         tmp = os.path.join(ROOT, '_thumb', '_tmp.html')

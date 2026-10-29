@@ -1,35 +1,52 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:P;src:url(PretendardVariable.woff2) format("woff2");font-weight:100 900}
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;font-family:P,sans-serif;background:#f3f6fb;overflow:hidden;position:relative;letter-spacing:-.02em}
-.bg1{position:absolute;width:760px;height:760px;border-radius:50%;right:-180px;top:-220px;background:radial-gradient(circle at 40% 40%,#4f8bff 0,#2563eb 45%,#1d4ed8 100%)}
-.bg2{position:absolute;width:300px;height:300px;border-radius:50%;right:420px;bottom:-170px;background:#dbe7ff}
-.left{position:absolute;left:84px;top:96px;width:560px}
-.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:12px 22px;font-size:24px;font-weight:700;color:#2563eb;box-shadow:0 6px 18px rgba(37,99,235,.12)}
-.badge i{width:10px;height:10px;border-radius:50%;background:#22c55e;display:block}
-h1{margin-top:34px;font-size:76px;line-height:1.16;font-weight:800;color:#0b1220}
-h1 em{font-style:normal;color:#2563eb}
-.sub{margin-top:26px;font-size:28px;font-weight:500;color:#5b6577;line-height:1.45}
-.brand{position:absolute;left:84px;bottom:58px;font-size:24px;font-weight:800;color:#0b1220;letter-spacing:.02em}
-.brand span{color:#8a94a6;font-weight:600;margin-left:12px;letter-spacing:0}
-.phone{position:absolute;right:120px;top:70px;width:330px;height:620px;background:#0b1220;border-radius:52px;padding:14px;box-shadow:0 40px 80px rgba(11,18,32,.35);transform:rotate(-6deg)}
-.scr{width:100%;height:100%;background:linear-gradient(180deg,#fff,#f4f7fc);border-radius:40px;padding:56px 22px 0;position:relative}
-.notch{position:absolute;left:50%;top:14px;width:100px;height:26px;margin-left:-50px;background:#0b1220;border-radius:20px}
-.lbl{font-size:18px;color:#8a94a6;font-weight:600}
-.amt{font-size:40px;font-weight:800;color:#0b1220;margin-top:6px}
-.chip{display:inline-block;margin-top:10px;background:#e8f0ff;color:#2563eb;font-size:16px;font-weight:700;padding:6px 12px;border-radius:999px}
-.row{margin-top:26px;background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 4px 14px rgba(11,18,32,.06);display:flex;justify-content:space-between;font-size:18px;font-weight:600;color:#0b1220}
-.row b{color:#16a34a}
-.toast{position:absolute;right:300px;top:420px;background:#fff;border-radius:22px;padding:18px 22px;display:flex;gap:14px;align-items:center;box-shadow:0 24px 48px rgba(11,18,32,.18);width:330px}
-.ic{width:46px;height:46px;border-radius:14px;background:#22c55e;color:#fff;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.toast p{font-size:17px;color:#8a94a6;font-weight:600}.toast h4{font-size:21px;color:#0b1220;font-weight:800}
-</style></head><body>
-<div class="bg1"></div><div class="bg2"></div>
-<div class="left"><div class="badge"><i></i>{{badge}}</div><h1>{{title1}}<br><em>{{title2}}</em></h1><p class="sub">{{sub}}</p></div>
+body{width:1200px;height:630px;font-family:P,sans-serif;overflow:hidden;position:relative;letter-spacing:-.02em;background:var(--bg);color:var(--ink)}
+.v{display:none}.s1 .v1,.s2 .v2,.s3 .v3,.s4 .v4,.s5 .v5,.s6 .v6{display:block}
+.left{position:absolute;left:80px;top:90px;width:600px;z-index:2}
+.badge{display:inline-block;background:var(--chipbg);color:var(--acc);border-radius:999px;padding:12px 22px;font-size:24px;font-weight:700}
+h1{margin-top:30px;font-size:74px;line-height:1.15;font-weight:800}
+h1 em{font-style:normal;color:var(--acc)}
+.sub{margin-top:24px;font-size:28px;font-weight:500;color:var(--mut);line-height:1.45}
+.brand{position:absolute;left:80px;bottom:54px;font-size:24px;font-weight:800;z-index:2}
+.brand span{color:var(--mut);font-weight:600;margin-left:12px}
+.card{background:#fff;border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,.18);color:#0b1220}
+.s1{--bg:#f3f6fb;--ink:#0b1220;--acc:#2563eb;--chipbg:#fff;--mut:#5b6577}
+.v1 .c1{position:absolute;width:760px;height:760px;border-radius:50%;right:-180px;top:-220px;background:radial-gradient(circle at 40% 40%,#4f8bff,#1d4ed8)}
+.phone{position:absolute;right:120px;top:70px;width:330px;height:620px;background:#0b1220;border-radius:52px;padding:14px;transform:rotate(-6deg);box-shadow:0 40px 80px rgba(11,18,32,.35)}
+.scr{height:100%;background:#fff;border-radius:40px;padding:56px 22px}
+.lbl{font-size:18px;color:#8a94a6;font-weight:600}.amt{font-size:40px;font-weight:800;margin-top:6px}
+.row{margin-top:22px;background:#f4f7fc;border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;font-size:18px;font-weight:600}.row b{color:#16a34a}
+.s2{--bg:#fff7ed;--ink:#2b1700;--acc:#ea580c;--chipbg:#ffedd5;--mut:#7c5a3a}
+.rc{position:absolute;right:110px;top:60px;width:360px;padding:40px 34px;transform:rotate(4deg);border-radius:10px}
+.rc h3{font-size:26px;text-align:center;letter-spacing:.2em}.rc .ln{border-top:2px dashed #e5d5c5;margin:20px 0}
+.rc p{display:flex;justify-content:space-between;font-size:20px;margin:12px 0;font-weight:600}.rc .tot{font-size:30px;font-weight:800;color:#ea580c}
+.rc .st{margin-top:22px;text-align:center;border:4px solid #16a34a;color:#16a34a;font-size:30px;font-weight:800;padding:8px;transform:rotate(-8deg);border-radius:12px}
+.s3{--bg:#ecfdf5;--ink:#052e1c;--acc:#059669;--chipbg:#d1fae5;--mut:#3f6b57}
+.ch{position:absolute;right:90px;width:400px}.b1{top:80px}.b2{top:250px;right:150px}.b3{top:420px}
+.ch{padding:22px 26px;font-size:22px;font-weight:600;border-radius:24px}
+.b2{background:#059669;color:#fff;border-radius:24px 24px 6px 24px}.b2 small{display:block;font-size:16px;opacity:.8;margin-top:6px}
+.s4{--bg:#f5f3ff;--ink:#1e1240;--acc:#7c3aed;--chipbg:#ede9fe;--mut:#5b4b8a}
+.cal{position:absolute;right:90px;top:90px;width:430px;padding:28px}
+.cal h3{font-size:22px;color:#7c3aed;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.grid i{height:44px;border-radius:10px;background:#f1effa;font-style:normal;font-size:16px;display:flex;align-items:center;justify-content:center;color:#9a90bf}
+.grid i.t{background:#7c3aed;color:#fff;font-weight:800}.grid i.x{background:#fee2e2;color:#dc2626;text-decoration:line-through}
+.cal .lg{margin-top:16px;font-size:18px;font-weight:700;display:flex;gap:18px}.lg span:first-child{color:#7c3aed}.lg span:last-child{color:#dc2626}
+.s5{--bg:#0b1220;--ink:#fff;--acc:#38bdf8;--chipbg:#0f2a44;--mut:#94a3b8}
+.qr{position:absolute;right:120px;top:95px;width:380px;height:380px;padding:30px;background:#fff;border-radius:32px;display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+.qr i{background:#0b1220;border-radius:4px}.qr i.o{background:#fff}
+.qrl{position:absolute;right:120px;top:500px;width:380px;text-align:center;font-size:24px;font-weight:700;color:#38bdf8}
+.s6{--bg:#14110b;--ink:#fff;--acc:#f5b941;--chipbg:#2b2312;--mut:#b8a888}
+.bars{position:absolute;right:110px;bottom:120px;display:flex;align-items:flex-end;gap:22px;height:380px}
+.bars i{width:58px;border-radius:14px 14px 4px 4px;background:linear-gradient(#f5b941,#a86b0c)}
+.pt{position:absolute;right:90px;top:60px;padding:18px 24px;font-size:22px;font-weight:800}.pt span{color:#a86b0c}
+</style></head><body class="{{style}}">
+<div class="left"><div class="badge">{{badge}}</div><h1>{{title1}}<br><em>{{title2}}</em></h1><p class="sub">{{sub}}</p></div>
 <div class="brand">TYCOON<span>tycoonkr.com</span></div>
-<div class="phone"><div class="scr"><div class="notch"></div>
-<div class="lbl">{{lbl}}</div><div class="amt">{{amount}}원</div><div class="chip">{{chip}}</div>
-<div class="row">카드 매출<b>정산 완료</b></div><div class="row">결제 링크<b>정산 완료</b></div><div class="row">QR 결제<b>정산 완료</b></div>
-</div></div>
-<div class="toast"><div class="ic">✓</div><div><p>TYCOON · 방금</p><h4>{{toast}}</h4></div></div>
+<div class="v v1"><div class="c1"></div><div class="phone"><div class="scr"><div class="lbl">{{lbl}}</div><div class="amt">{{amount}}원</div><div class="row">카드 매출<b>정산 완료</b></div><div class="row">결제 링크<b>정산 완료</b></div><div class="row">QR 결제<b>정산 완료</b></div></div></div></div>
+<div class="v v2"><div class="card rc"><h3>정산 내역</h3><div class="ln"></div><p><span>결제 방식</span><span>{{chip}}</span></p><p><span>정산 구분</span><span>당일 정산</span></p><p><span>입금 예정</span><span>신청 후 1시간 내</span></p><div class="ln"></div><p class="tot"><span>입금액</span><span>{{amount}}원</span></p><div class="st">입금 완료</div></div></div>
+<div class="v v3"><div class="card ch b1">카드 결제 되나요? 🙂</div><div class="ch b2">결제 링크 보내드릴게요!<small>tycoonkr.com · 카드 결제</small></div><div class="card ch b3">✅ {{toast}}</div></div>
+<div class="v v4"><div class="card cal"><h3>{{lbl}}</h3><div class="grid"><i>1</i><i>2</i><i>3</i><i class="t">오늘</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i class="x">10</i><i>11</i><i>12</i><i>13</i><i>14</i></div><div class="lg"><span>■ 타이쿤 입금</span><span>■ 기존 정산일</span></div></div></div>
+<div class="v v5"><div class="qr">{{qr}}</div><div class="qrl">찍으면 카드 결제 · 오늘 정산</div></div>
+<div class="v v6"><div class="bars"><i style="height:110px"></i><i style="height:170px"></i><i style="height:230px"></i><i style="height:300px"></i><i style="height:370px"></i></div><div class="card pt">{{lbl}} <span>{{amount}}원</span></div></div>
 </body></html>
