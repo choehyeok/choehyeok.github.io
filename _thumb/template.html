@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:P;src:url(PretendardVariable.woff2) format("woff2");font-weight:100 900}
+*{margin:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:P,sans-serif;background:#f3f6fb;overflow:hidden;position:relative;letter-spacing:-.02em}
+.bg1{position:absolute;width:760px;height:760px;border-radius:50%;right:-180px;top:-220px;background:radial-gradient(circle at 40% 40%,#4f8bff 0,#2563eb 45%,#1d4ed8 100%)}
+.bg2{position:absolute;width:300px;height:300px;border-radius:50%;right:420px;bottom:-170px;background:#dbe7ff}
+.left{position:absolute;left:84px;top:96px;width:560px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:12px 22px;font-size:24px;font-weight:700;color:#2563eb;box-shadow:0 6px 18px rgba(37,99,235,.12)}
+.badge i{width:10px;height:10px;border-radius:50%;background:#22c55e;display:block}
+h1{margin-top:34px;font-size:76px;line-height:1.16;font-weight:800;color:#0b1220}
+h1 em{font-style:normal;color:#2563eb}
+.sub{margin-top:26px;font-size:28px;font-weight:500;color:#5b6577;line-height:1.45}
+.brand{position:absolute;left:84px;bottom:58px;font-size:24px;font-weight:800;color:#0b1220;letter-spacing:.02em}
+.brand span{color:#8a94a6;font-weight:600;margin-left:12px;letter-spacing:0}
+.phone{position:absolute;right:120px;top:70px;width:330px;height:620px;background:#0b1220;border-radius:52px;padding:14px;box-shadow:0 40px 80px rgba(11,18,32,.35);transform:rotate(-6deg)}
+.scr{width:100%;height:100%;background:linear-gradient(180deg,#fff,#f4f7fc);border-radius:40px;padding:56px 22px 0;position:relative}
+.notch{position:absolute;left:50%;top:14px;width:100px;height:26px;margin-left:-50px;background:#0b1220;border-radius:20px}
+.lbl{font-size:18px;color:#8a94a6;font-weight:600}
+.amt{font-size:40px;font-weight:800;color:#0b1220;margin-top:6px}
+.chip{display:inline-block;margin-top:10px;background:#e8f0ff;color:#2563eb;font-size:16px;font-weight:700;padding:6px 12px;border-radius:999px}
+.row{margin-top:26px;background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 4px 14px rgba(11,18,32,.06);display:flex;justify-content:space-between;font-size:18px;font-weight:600;color:#0b1220}
+.row b{color:#16a34a}
+.toast{position:absolute;right:300px;top:420px;background:#fff;border-radius:22px;padding:18px 22px;display:flex;gap:14px;align-items:center;box-shadow:0 24px 48px rgba(11,18,32,.18);width:330px}
+.ic{width:46px;height:46px;border-radius:14px;background:#22c55e;color:#fff;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.toast p{font-size:17px;color:#8a94a6;font-weight:600}.toast h4{font-size:21px;color:#0b1220;font-weight:800}
+</style></head><body>
+<div class="bg1"></div><div class="bg2"></div>
+<div class="left"><div class="badge"><i></i>{{badge}}</div><h1>{{title1}}<br><em>{{title2}}</em></h1><p class="sub">{{sub}}</p></div>
+<div class="brand">TYCOON<span>tycoonkr.com</span></div>
+<div class="phone"><div class="scr"><div class="notch"></div>
+<div class="lbl">오늘 정산 예정</div><div class="amt">{{amount}}원</div><div class="chip">{{chip}}</div>
+<div class="row">카드 매출<b>정산 완료</b></div><div class="row">결제 링크<b>정산 완료</b></div><div class="row">QR 결제<b>정산 완료</b></div>
+</div></div>
+<div class="toast"><div class="ic">✓</div><div><p>TYCOON · 방금</p><h4>{{toast}}</h4></div></div>
+</body></html>
