@@ -1,9 +1,8 @@
-title: "keria 정산 가이드"
-description: "크리에이터·스트리머·라이브커머스 셀러·소상공인을 위한 카드 결제 선정산, 당일 정산 정보 가이드"
+title: "카드매출 빠른정산 가이드"
+description: "크리에이터·스트리머·라이브커머스 셀러·소상공인을 위한 카드 결제, 결제 링크, 당일·익일 정산 정보"
 url: "https://choehyeok.github.io"
 baseurl: ""
 lang: ko_KR
-author: keria
 theme: minima
 plugins:
   - jekyll-feed
