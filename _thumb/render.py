@@ -24,7 +24,7 @@ with sync_playwright() as p:
         if not d or (os.path.exists(out) and '--force' not in sys.argv): continue
         h = int(hashlib.md5(slug.encode()).hexdigest(), 16)
         if not d['style']:
-            d['style'] = 's6' if 'partner' in slug else 's%d' % (h % 5 + 1)
+            d['style'] = 's6' if 'partner' in slug else 's%d' % [1,2,3,4,5,7,8,9,10,11,12,13,14][h % 13]
         rnd = random.Random(h)
         import qrcode
         q = qrcode.QRCode(border=0, error_correction=qrcode.constants.ERROR_CORRECT_M); q.add_data('https://tycoonkr.com'); q.make()
