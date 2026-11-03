@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, '_thumb', 'template.html'), encoding='utf-8').read()
-DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '오늘 정산 예정', 'style': ''}
+DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '오늘 정산 예정', 'style': '', 'size': '', 'i1': '', 'i2': '', 'i3': '', 'i4': '', 'l1': '일반 정산', 'l2': '타이쿤'}
 
 def meta(path):
     t = open(path, encoding='utf-8').read().split('---')[1]
@@ -34,6 +34,7 @@ with sync_playwright() as p:
         for k, v in d.items(): html = html.replace('{{%s}}' % k, v)
         tmp = os.path.join(ROOT, '_thumb', '_tmp.html')
         open(tmp, 'w', encoding='utf-8').write(html)
+        pg.set_viewport_size({'width': 1000, 'height': 1500} if d['size'] == 'tall' else {'width': 1200, 'height': 630})
         pg.goto('file://' + tmp); pg.wait_for_timeout(400)
         pg.screenshot(path=out); print('rendered', out)
     b.close()
