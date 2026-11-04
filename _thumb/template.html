@@ -2,7 +2,19 @@
 @font-face{font-family:P;src:url(PretendardVariable.woff2) format("woff2");font-weight:100 900}
 *{margin:0;box-sizing:border-box}
 body{width:1200px;height:630px;font-family:P,sans-serif;overflow:hidden;position:relative;letter-spacing:-.02em;background:var(--bg);color:var(--ink)}
-.v{display:none}.s1 .v1,.s2 .v2,.s3 .v3,.s4 .v4,.s5 .v5,.s6 .v6,.s7 .v7,.s8 .v8,.s9 .v9,.s10 .v10,.s11 .v11,.s12 .v12,.s13 .v13,.s14 .v14,.s15 .v15,.s16 .v16,.s17 .v17,.s18 .v18{display:block}
+.v{display:none}.s1 .v1,.s2 .v2,.s3 .v3,.s4 .v4,.s5 .v5,.s6 .v6,.s7 .v7,.s8 .v8,.s9 .v9,.s10 .v10,.s11 .v11,.s12 .v12,.s13 .v13,.s14 .v14,.s15 .v15,.s16 .v16,.s17 .v17,.s18 .v18,.s19 .v19{display:block}
+/* card news slide (1080x1080) */
+body.sq{width:1080px;height:1080px}.sq .v{width:1080px;height:1080px}
+.s19{--bg:#f4f7ff;--ink:#0b1220;--acc:#2563eb;--chipbg:#fff;--mut:#334155}
+.s19 .left{top:130px;left:90px;width:900px}.s19 h1{font-size:76px;margin-top:36px}.s19 .sub{margin-top:44px;font-size:36px;line-height:1.7;color:#334155;font-weight:600}
+.s19 .brand{left:90px;bottom:80px;font-size:28px}
+.ico{position:absolute;right:110px;bottom:190px;font-size:230px;line-height:1}
+.pg{position:absolute;right:90px;bottom:72px;background:#2563eb;color:#fff;font-weight:800;font-size:28px;padding:12px 24px;border-radius:999px}
+.blob{position:absolute;right:-160px;top:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#c7d7ff,#e8efff);opacity:.9}
+.blob2{position:absolute;left:-120px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:#e3ebff}
+.s19.c2{--acc:#059669;--bg:#f0fdf7}.s19.c2 .pg{background:#059669}.s19.c2 .blob{background:radial-gradient(circle at 40% 40%,#bbf7d0,#ecfdf5)}.s19.c2 .blob2{background:#dcfce7}
+.s19.c3{--acc:#7c3aed;--bg:#f7f5ff}.s19.c3 .pg{background:#7c3aed}.s19.c3 .blob{background:radial-gradient(circle at 40% 40%,#ddd6fe,#f5f3ff)}.s19.c3 .blob2{background:#ede9fe}
+.s19.c4{--acc:#ea580c;--bg:#fff8f1}.s19.c4 .pg{background:#ea580c}.s19.c4 .blob{background:radial-gradient(circle at 40% 40%,#fed7aa,#fff7ed)}.s19.c4 .blob2{background:#ffedd5}
 .v{position:absolute;left:0;top:0;width:1200px;height:630px}
 /* pin (1000x1500) */
 body.tall{width:1000px;height:1500px}.tall .left{top:110px;width:840px}.tall h1{font-size:80px}.tall .sub{font-size:32px}.tall .v{top:650px;left:-385px;transform:scale(1.3);transform-origin:885px 315px}.tall .brand{bottom:60px;font-size:30px}
@@ -122,5 +134,6 @@ h1 em{font-style:normal;color:var(--acc)}
 <div class="v v15"><div class="stp"><div><b>1</b>{{i1}}</div><div><b>2</b>{{i2}}</div><div><b>3</b>{{i3}}</div></div></div>
 <div class="v v16"><div class="cmp"><div class="o"><h4>{{l1}}</h4><p>{{i1}}</p><p>{{i2}}</p></div><div class="n"><h4>{{l2}}</h4><p>{{i3}}</p><p>{{i4}}</p></div></div></div>
 <div class="v v17"><div class="ck"><p><i>✔</i>{{i1}}</p><p><i>✔</i>{{i2}}</p><p><i>✔</i>{{i3}}</p><p><i>✔</i>{{i4}}</p></div></div>
+<div class="v v19"><div class="blob"></div><div class="blob2"></div><div class="ico">{{icon}}</div><div class="pg">{{lbl}}</div></div>
 <div class="v v18"><div class="qt"><p>{{i1}}</p><small>{{i2}}</small></div></div>
 </body></html>
