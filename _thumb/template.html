@@ -114,6 +114,7 @@ h1 em{font-style:normal;color:var(--acc)}
 .s14{--bg:#111827;--ink:#fff;--acc:#facc15;--chipbg:#374151;--mut:#d1d5db}
 .s14 .left{top:150px;width:1040px}.s14 h1{font-size:96px}
 .stripe{position:absolute;right:-60px;top:-60px;width:360px;height:360px;border:40px solid #facc15;border-radius:50%;opacity:.9}
+h1{white-space:nowrap;word-break:keep-all}.sub,.v *{word-break:keep-all}
 </style></head><body class="{{style}} {{size}}">
 <div class="left"><div class="badge">{{badge}}</div><h1>{{title1}}<br><em>{{title2}}</em></h1><p class="sub">{{sub}}</p></div>
 <div class="brand">TYCOON<span>tycoonkr.com</span></div>
@@ -136,4 +137,5 @@ h1 em{font-style:normal;color:var(--acc)}
 <div class="v v17"><div class="ck"><p><i>✔</i>{{i1}}</p><p><i>✔</i>{{i2}}</p><p><i>✔</i>{{i3}}</p><p><i>✔</i>{{i4}}</p></div></div>
 <div class="v v19"><div class="blob"></div><div class="blob2"></div><div class="ico">{{icon}}</div><div class="pg">{{lbl}}</div></div>
 <div class="v v18"><div class="qt"><p>{{i1}}</p><small>{{i2}}</small></div></div>
+<script>document.fonts.ready.then(()=>document.querySelectorAll("h1").forEach(h=>{const w=h.parentElement.clientWidth;let s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>w&&s>24){s-=2;h.style.fontSize=s+"px"}}))</script>
 </body></html>
