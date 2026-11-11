@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = open(os.path.join(ROOT, '_thumb', 'template.html'), encoding='utf-8').read()
-DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '오늘 정산 예정', 'style': '', 'size': '', 'i1': '', 'i2': '', 'i3': '', 'i4': '', 'l1': '일반 정산', 'l2': '타이쿤', 'icon': ''}
+DEF = {'badge': '당일·익일 정산', 'title1': '', 'title2': '', 'sub': '', 'amount': '1,250,000', 'chip': '오늘 입금', 'toast': '매출 정산이 입금됐어요', 'lbl': '', 'style': '', 'size': '', 'i1': '', 'i2': '', 'i3': '', 'i4': '', 'l1': '일반 정산', 'l2': '타이쿤', 'icon': ''}
 
 def meta(path):
     t = open(path, encoding='utf-8').read().split('---')[1]
@@ -32,6 +32,7 @@ with sync_playwright() as p:
         d['qr'] = '<svg viewBox="0 0 %d %d" width="320" height="320" shape-rendering="crispEdges">' % (n, n) + ''.join('<rect x="%d" y="%d" width="1" height="1"/>' % (x, y) for y in range(n) for x in range(n) if mx[y][x]) + '</svg>'
         html = TPL
         for k, v in d.items(): html = html.replace('{{%s}}' % k, v)
+        html = html.replace('<div class="pg"></div>', '').replace('<div class="lbl"></div>', '').replace('<h3></h3>', '')
         tmp = os.path.join(ROOT, '_thumb', '_tmp.html')
         open(tmp, 'w', encoding='utf-8').write(html)
         pg.set_viewport_size({'width': 1000, 'height': 1500} if d['size'] == 'tall' else {'width': 1080, 'height': 1080} if d['size'] == 'sq' else {'width': 1200, 'height': 630})
