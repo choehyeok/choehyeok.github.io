@@ -1,12 +1,12 @@
 ---
 title: "당일 정산과 익일 정산, 언제 고를까요?"
-description: "당일 정산은 신청 후 1시간 이내, 익일 정산은 다음 날 오후 4시 전에 입금돼요. 내 지출 일정에 맞는 정산 방식을 고르는 기준이에요."
+description: "내 지출 일정에 맞는 정산 방식을 고르는 기준"
 image: /img/settlement-day-choice.png
 thumb_style: "s7"
 thumb_badge: "정산 비교"
 thumb_title1: "당일이냐 익일이냐"
 thumb_title2: "내 일정에 맞춰요"
-thumb_sub: "1시간 이내 vs 다음 날 4시 전"
+thumb_sub: "평일 낮 1시간 vs 다음 날 4~6시"
 thumb_toast: "정산 신청 완료"
 thumb_amount: "480,000"
 thumb_lbl: "정산 방식"
@@ -19,8 +19,8 @@ tags: [당일정산, 익일정산, 카드결제, 정산방식, 타이쿤]
 
 ### 둘은 뭐가 다른가요?
 
-- 당일 정산: 신청 후 1시간 이내 입금
-- 익일 정산: 다음 날 오후 4시 전 입금
+- 당일 정산: 평일 오전 9시~밤 10시 결제 기준 1시간 이내 입금
+- 익일 정산: 다음 날 오후 4시~6시 사이 입금
 
 ![당일과 익일 차이](/img/settlement-day-choice-2.png)
 
