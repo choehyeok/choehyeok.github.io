@@ -31,6 +31,7 @@ with sync_playwright() as p:
         tmp = os.path.join(ROOT, '_thumb', '_tmp.html')
         if d['theme']:
             w, h, html = build_v2(d)
+            html = html.replace('<style>', '<style>@font-face{font-family:P;src:url(PretendardVariable.woff2) format("woff2");font-weight:100 900}', 1).replace("font-family:'Noto Sans CJK KR'", "font-family:P,'Noto Sans CJK KR'")
             open(tmp, 'w', encoding='utf-8').write(html)
             pg.set_viewport_size({'width': w, 'height': h})
             pg.goto('file://' + tmp); pg.wait_for_timeout(400)
