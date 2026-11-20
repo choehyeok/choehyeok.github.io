@@ -25,10 +25,10 @@ def _phone(t, d):
     amt = d.get('i2') or '50,000'
     return ("<div style='position:absolute;left:790px;top:70px;width:330px;height:640px;border-radius:52px;background:#0f172a;padding:14px;transform:rotate(8deg);box-shadow:0 30px 60px rgba(0,0,0,.35)'>"
       "<div style='width:100%%;height:100%%;border-radius:40px;background:#fff;padding:34px 24px;color:#111'>"
-      "<div style='font-size:22px;color:#64748b;font-weight:700'>결제 금액</div><div class='b' style='font-size:54px;margin:4px 0 22px'>%s원</div>"
+      "<div style='font-size:22px;color:#64748b;font-weight:700'>결제 금액</div><div class='b' style='font-size:%dpx;margin:4px 0 22px;white-space:nowrap'>%s원</div>"
       "<div style='background:#f1f5f9;border-radius:16px;padding:16px 18px;font-size:22px;font-weight:700;line-height:1.7'><span style='color:#64748b'>상품</span> %s<br><span style='color:#64748b'>수단</span> 신용·체크카드</div>"
       "<div class='b' style='margin-top:26px;background:%s;color:%s;border-radius:18px;text-align:center;padding:22px;font-size:28px'>카드로 결제하기</div>"
-      "<div style='margin-top:18px;text-align:center;font-size:18px;color:#94a3b8;font-weight:700'>예시 화면</div></div></div>") % (e(amt), e(d.get('i1') or '레슨 1회'), t['ac'] if t['ac'] != '#111111' else '#111', t['on'] if t['ac'] != '#111111' else '#fff')
+      "<div style='margin-top:18px;text-align:center;font-size:18px;color:#94a3b8;font-weight:700'>예시 화면</div></div></div>") % (54 if len(amt) < 7 else 42, e(amt), e(d.get('i1') or '레슨 1회'), t['ac'] if t['ac'] != '#111111' else '#111', t['on'] if t['ac'] != '#111111' else '#fff')
 
 def _chat(t, d):
     return ("<div style='position:absolute;right:56px;top:64px;width:470px'>"
@@ -44,7 +44,7 @@ def thumb(t, d):
         body = ("<div style='position:absolute;left:64px;top:56px;background:%s;color:%s;font-weight:900;font-size:34px;padding:8px 28px;border-radius:99px'>%s</div>"
                 "<div class='b' style='position:absolute;left:64px;top:170px;font-size:100px;line-height:1.15;color:%s;letter-spacing:-3px'>%s</div>%s") % (t['ac'], t['on'], badge, t['ink'], title, _phone(t, d))
     elif L == 'chat':
-        body = ("<div class='b' style='position:absolute;left:64px;top:60px;font-size:92px;line-height:1.15;color:%s;letter-spacing:-3px'>%s</div>%s") % (t['ink'], title, _chat(t, d))
+        body = ("<div class='b' style='position:absolute;left:64px;top:60px;width:600px;font-size:80px;line-height:1.2;color:%s;letter-spacing:-3px'>%s</div>%s") % (t['ink'], title, _chat(t, d))
     elif L == 'bignum':
         big = e(d['amount'] or '1'); unit = e(d['chip'] or '시간')
         body = ("<div style='position:absolute;left:64px;top:52px;color:%s;font-weight:900;font-size:36px'>%s</div>"
@@ -88,10 +88,11 @@ def card(t, d):
         body = "<div style='position:absolute;inset:48px;display:flex;flex-direction:column;gap:22px'><div style='padding:6px 16px'>%s</div><div style='display:flex;flex-direction:column;gap:22px;flex:1'>%s</div></div>" % (head, pans)
     else:  # rows: 번호 + 한 줄 카드
         rows = ''
+        rh = 170 if len(items) <= 3 else 124
         for i, it in enumerate(items):
             a = parts(it)
-            rows += ("<div style='background:%s;border-radius:30px;padding:0 36px;height:210px;display:flex;align-items:center;gap:34px;box-shadow:0 10px 0 rgba(0,0,0,.12)'><div class='b' style='font-size:110px;color:%s;width:76px;text-align:center'>%d</div><div><div class='b' style='font-size:48px;color:%s;line-height:1.2'>%s</div><div style='font-size:32px;font-weight:700;color:%s;margin-top:6px'>%s</div></div></div>") % (t['card'], t['ac'], i + 1, t['ink'], e(a[0]), t['mu'], e(a[1] if len(a) > 1 else ''))
-        body = "<div style='position:absolute;left:64px;right:64px;top:60px'>%s</div><div style='position:absolute;left:64px;right:64px;top:300px;display:flex;flex-direction:column;gap:20px'>%s</div>%s" % (head, rows, foot)
+            rows += ("<div style='background:%s;border-radius:30px;padding:0 36px;height:%dpx;display:flex;align-items:center;gap:34px;box-shadow:0 10px 0 rgba(0,0,0,.12)'><div class='b' style='font-size:110px;color:%s;width:76px;text-align:center'>%d</div><div><div class='b' style='font-size:48px;color:%s;line-height:1.2'>%s</div><div style='font-size:32px;font-weight:700;color:%s;margin-top:6px'>%s</div></div></div>") % (t['card'], rh, t['ac'], i + 1, t['ink'], e(a[0]), t['mu'], e(a[1] if len(a) > 1 else ''))
+        body = "<div style='position:absolute;left:64px;right:64px;top:60px'>%s</div><div style='position:absolute;left:64px;right:64px;top:392px;display:flex;flex-direction:column;gap:20px'>%s</div>%s" % (head, rows, foot)
     return 1080, 1080, body
 
 def build(d):
