@@ -1,9 +1,11 @@
 ---
 thumb_theme: "t3"
 thumb_size: "tall"
-thumb_layout: "plain"
+thumb_layout: "steps"
 thumb_badge: "소상공인·프리랜서"
-thumb_title1: "결제 링크,"
-thumb_title2: "이렇게 만들어요"
-thumb_sub: "금액·정산 방식만 고르면"
+thumb_title1: "결제 링크 만드는 순서"
+thumb_i1: "로그인|MY TYCOON"
+thumb_i2: "금액 입력|정산 방식 선택"
+thumb_i3: "링크·QR 생성|고객에게 전송"
+thumb_i4: "내역 확인|입금 예정일"
 ---
