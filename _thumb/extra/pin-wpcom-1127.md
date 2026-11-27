@@ -1,9 +1,11 @@
 ---
 thumb_theme: "t4"
-thumb_layout: "plain"
+thumb_layout: "steps"
 thumb_size: "tall"
 thumb_badge: "청소 서비스"
-thumb_title1: "현장에서"
-thumb_title2: "카드로 받아요"
-thumb_sub: "링크·QR 결제"
+thumb_title1: "현장 카드결제"
+thumb_i1: "금액 정하기|작업 내용 확인"
+thumb_i2: "링크·QR 준비|미리 만들어 두기"
+thumb_i3: "고객 휴대폰 결제|카드로"
+thumb_i4: "정산계좌 입금|고른 방식대로"
 ---
